@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 export const AppContext = React.createContext();
 
-export const useState = () => {
+export const useSelector = selectorFn => {
   const { state } = useContext(AppContext);
-  return state;
+  return selectorFn(state);
 };
 
 export const useDispatch = () => {
@@ -12,7 +12,4 @@ export const useDispatch = () => {
   return dispatch;
 };
 
-export const useMarkdown = () => {
-  const { markdown } = useState();
-  return markdown;
-};
+export const getMarkdownState = state => state.markdown;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Document from '../../containers/Document';
 import View from '../markdown/view';
 
 export default function App() {
