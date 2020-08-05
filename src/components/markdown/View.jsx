@@ -15,7 +15,7 @@ const View = () => {
 
   return (
     <>
-      <div className={styles.Document}>
+      <div className={styles.View}>
         <Editor />
         <Preview />
       </div>
