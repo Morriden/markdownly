@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { AppContext } from '../hooks/appContext';
-import reducer, { initialState } from '';
+import reducer, { initialState } from '../reducers/appReducer';
 
 // eslint-disable-next-line react/prop-types
 const AppProvider = ({ children }) => {

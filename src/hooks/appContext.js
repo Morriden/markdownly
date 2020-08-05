@@ -11,3 +11,8 @@ export const useDispatch = () => {
   const { dispatch } = useContext(AppContext);
   return dispatch;
 };
+
+export const useMarkdown = () => {
+  const { markdown } = useState();
+  return markdown;
+};

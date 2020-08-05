@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Editor.css';
+import { useMarkdown, useDispatch } from '../../hooks/appContext';
+import { updateMarkdown } from '../../utils/actions';
 
-const Editor = ({ markdown, updateMarkdown }) => (
-  <textarea className={styles.Editor} value={markdown} onChange={updateMarkdown} />
-);
+const Editor = () => {
+  const markdown = useMarkdown();
+  const dispatch = useDispatch();
 
-Editor.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func.isRequired
+  return (
+    <textarea className={styles.Editor} value={markdown} onChange={({ target }) => dispatch(updateMarkdown(target.value))} />
+  );
 };
 
 export default Editor;
