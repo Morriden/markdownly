@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from '../../hooks/appContext';
-import getMarkdown from '../../selectors/getMarkdown';
+import { getMarkdown } from '../../selectors/markdownSelectors';
 import { updateMarkdown } from '../../actions/actions';
 import styles from './Editor.css';
 
