@@ -1,10 +1,11 @@
 import React from 'react';
+import { useDispatch, useSelector } from '../../hooks/appContext';
+import getMarkdown from '../../selectors/getMarkdown';
+import { updateMarkdown } from '../../actions/actions';
 import styles from './Editor.css';
-import { useDispatch, getMarkdownState, useSelector } from '../../hooks/appContext';
-import { updateMarkdown } from '../../utils/actions';
 
 const Editor = () => {
-  const markdown = useSelector(getMarkdownState);
+  const markdown = useSelector(getMarkdown);
   const dispatch = useDispatch();
 
   return (

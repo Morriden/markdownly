@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN } from '../utils/actions';
+import { UPDATE_MARKDOWN } from '../actions/actions';
 
 export const initialState = {
   markdown: 'Im a test sentence'
