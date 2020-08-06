@@ -1,9 +1,9 @@
-import { UPDATE_MARKDOWN } from '../actions/actions';
+import { UPDATE_MARKDOWN, NEW_MARKDOWN } from '../actions/actions';
 
 
 export const initialState = {
   currentMarkdownID: 1234,
-  
+
   markdownList: [  
     { 
       id: 1234,
@@ -28,6 +28,12 @@ export default function reducer(state, action) {
           return markdown;
         }
       })  };
+    case NEW_MARKDOWN:
+      return {  
+        ...state,
+        currentMarkdownID: action.payload.id,
+        markdownList: [...state.markdownList, action.payload]  
+      };
     default:
       return state;
   }
