@@ -10,10 +10,15 @@ export const updateMarkdown = (data, id) => ({
 export const NEW_MARKDOWN = 'NEW_MARKDOWN';
 export const newMarkdown = title => ({
   type: NEW_MARKDOWN,
-  //this payload can become an empty function later
   payload: {
     id: Date.now(),
     title: title,
     body: ''
   }
+});
+
+export const DELETE_MARKDOWN = 'DELETE_MARKDOWN';
+export const deleteMarkdown = id => ({
+  type: DELETE_MARKDOWN,
+  payload: id
 });
