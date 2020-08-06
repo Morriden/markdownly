@@ -35,7 +35,7 @@ export default function reducer(state, action) {
     case DELETE_MARKDOWN:
       return {
         markdownList: state.markdownList.filter(markdown => 
-          markdown.id !== action.payload.id
+          markdown.id !== action.payload
         )
       };
     default:

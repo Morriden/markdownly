@@ -14,16 +14,16 @@ const Controls = () => {
 
   return (
     <section>
-    <form onSubmit={handleSubmit}>
-      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
+      <form onSubmit={handleSubmit}>
+        <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
+        <label>
+          <button >New Markdown</button>
+        </label>
+      </form>
       <label>
-        <button >New Markdown</button>
+        {/* <button onClick={}>Delete Markdown</button> */}
       </label>
-    </form>
-    <label>
-    <button onClick={}>Delete Markdown</button>
-  </label>
-  </section>
+    </section>
   );
 };
 
