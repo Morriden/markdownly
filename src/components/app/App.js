@@ -1,11 +1,18 @@
 import React from 'react';
 import View from '../markdown/view';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 export default function App() {
   return (
-    <>
-      <h1>Markdown Editor</h1>
-      <View />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={View} />
+        <Route exact path="/:id" component={View} />
+      </Switch>
+    </Router>
   );
 }

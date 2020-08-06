@@ -1,17 +1,11 @@
 import marked from 'marked';
 
-export const getMarkdownID = state => state.currentMarkdownID;
+export const getMarkdownList = state => state.markdownList;
 
-export const getMarkdown = state => {
-  
+export const getMarkdown = (state, id) => {
   const markdown = state.markdownList.find(markdown => 
-    (markdown.id === getMarkdownID(state)));
+    (markdown.id === id));
   return markdown?.body;
 };
 
-export const getMarkdownList = state => state.markdownList;
-
-
-export const getMarkdownPreview = state => marked(getMarkdown(state));
-
-
+export const getMarkdownPreview = (state, id) => marked(getMarkdown(state, id));

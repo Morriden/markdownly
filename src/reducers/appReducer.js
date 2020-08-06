@@ -2,8 +2,6 @@ import { UPDATE_MARKDOWN, NEW_MARKDOWN } from '../actions/actions';
 
 
 export const initialState = {
-  currentMarkdownID: 1234,
-
   markdownList: [  
     { 
       id: 1234,
@@ -13,7 +11,7 @@ export const initialState = {
     { 
       id: 5678,
       title: 'new tab', 
-      body: 'Look at that markdown file.'
+      body: 'Look at this new markdown file.'
     },
   ]
 }; 
@@ -21,17 +19,17 @@ export const initialState = {
 export default function reducer(state, action) {
   switch(action.type) {
     case UPDATE_MARKDOWN:
-      return { ...state,  markdownList: state.markdownList.map(markdown => {
-        if(markdown.id === state.currentMarkdownID) {
-          return { ...markdown, body: action.payload };
+      return { ...state, markdownList: state.markdownList.map(markdown => {
+        if(markdown.id === action.payload.id) {
+          return { ...markdown, body: action.payload.data };
         } else {
           return markdown;
         }
-      })  };
+      }) 
+      };
     case NEW_MARKDOWN:
       return {  
         ...state,
-        currentMarkdownID: action.payload.id,
         markdownList: [...state.markdownList, action.payload]  
       };
     default:
