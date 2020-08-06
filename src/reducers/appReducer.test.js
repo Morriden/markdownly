@@ -4,11 +4,19 @@ import { updateMarkdown } from '../actions/actions';
 describe('app reducer', () => {
   it('handles the updatemarkdown action', () => {
     const state = {
-      markdown: [
-        { id: 1234, 
+      currentMarkdownID: 1234,
+  
+      markdownList: [  
+        { 
+          id: 1234,
           title: 'whatever', 
           body: 'Look at that markdown file.'
-        }
+        },
+        { 
+          id: 5678,
+          title: 'whatever', 
+          body: 'Do not Look at that markdown file.'
+        },
       ]
     };
 
@@ -16,10 +24,9 @@ describe('app reducer', () => {
 
     const newstate = reducer(state, action);
 
-    expect(newstate).toEqual([
-      { 
-        markdown: 'something else.'
-      }
-    ]);
+    expect(newstate).toEqual(
+      { 'currentMarkdownID': 1234, 
+        'markdownList': [{ 'body': 'something else', 'id': 1234, 'title': 'whatever' }, { 'body': 'Do not Look at that markdown file.', 'id': 5678, 'title': 'whatever' }] }
+    );
   });
 });
