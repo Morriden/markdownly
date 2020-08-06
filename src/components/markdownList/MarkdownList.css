@@ -1,0 +1,16 @@
+.MarkdownList {
+  ul {
+    display: inline-flex;
+   
+    width: 50vh;
+    overflow: scroll;
+  }
+  li {
+    height: 1rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    margin: 1rem;
+  }
+}
