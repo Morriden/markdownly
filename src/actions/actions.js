@@ -17,9 +17,3 @@ export const newMarkdown = title => ({
     body: ''
   }
 });
-
-export const UPDATE_ID = 'UPDATE_ID';
-export const updateID = (id) => ({
-  type: UPDATE_ID,
-  payload: id
-});

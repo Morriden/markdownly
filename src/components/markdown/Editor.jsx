@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const Editor = () => {
   const dispatch = useDispatch();
-  const { id } = useParams() || 1234;
+  const { id = 1234 } = useParams();
   const markdown = useSelector(getMarkdown, +id);
 
   return (
