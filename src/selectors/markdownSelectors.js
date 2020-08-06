@@ -8,7 +8,10 @@ export const getMarkdown = state => {
     (markdown.id === getMarkdownID(state)));
   return markdown?.body;
 };
+
 export const getMarkdownList = state => state.markdownList;
 
 
 export const getMarkdownPreview = state => marked(getMarkdown(state));
+
+
