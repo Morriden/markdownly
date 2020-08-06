@@ -6,7 +6,19 @@ exports[`Editor component renders Editor 1`] = `
     Object {
       "dispatch": [Function],
       "state": Object {
-        "markdown": "Im a test sentence",
+        "currentMarkdownID": 1234,
+        "markdownList": Array [
+          Object {
+            "body": "Look at that markdown file.",
+            "id": 1234,
+            "title": "whatever",
+          },
+          Object {
+            "body": "Look at that markdown file.",
+            "id": 5678,
+            "title": "new tab",
+          },
+        ],
       },
     }
   }
