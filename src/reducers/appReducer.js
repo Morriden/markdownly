@@ -12,7 +12,7 @@ export const initialState = {
     },
     { 
       id: 5678,
-      title: 'whatever', 
+      title: 'new tab', 
       body: 'Look at that markdown file.'
     },
   ]
