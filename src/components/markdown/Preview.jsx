@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 const Preview = () => {
 
-  const { id } = useParams();
+  const { id } = useParams() || 1234;
   const __html = useSelector(getMarkdownPreview, +id);
   
   return <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>;

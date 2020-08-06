@@ -1,10 +1,8 @@
-import {  getMarkdownPreview, getMarkdown } from './markdownSelectors';
+import { getMarkdownPreview, getMarkdown } from './markdownSelectors';
 
 describe('getMarkdownBody selector', () => {
   it('will get the markdown with the selector', () => {
-    const state = {
-      currentMarkdownID: 1234,
-  
+    const state = { 
       markdownList: [  
         { 
           id: 1234,
@@ -19,7 +17,7 @@ describe('getMarkdownBody selector', () => {
       ]
     };
 
-    const newmarkdown = getMarkdown(state);
+    const newmarkdown = getMarkdown(state, 1234);
 
     expect(newmarkdown).toEqual('Look at that markdown file.');
   });
@@ -27,9 +25,7 @@ describe('getMarkdownBody selector', () => {
 
 describe('getMarkdownPreview selector', () => {
   it('will get the markdown preview with the selector', () => {
-    const state = {
-      currentMarkdownID: 1234,
-  
+    const state = { 
       markdownList: [  
         { 
           id: 1234,
@@ -44,7 +40,7 @@ describe('getMarkdownPreview selector', () => {
       ]
     };
 
-    const newmarkdown = getMarkdownPreview(state);
+    const newmarkdown = getMarkdownPreview(state, 1234);
 
     expect(newmarkdown).toEqual('<p>Look at that markdown file.</p>\n');
   });

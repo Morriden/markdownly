@@ -20,7 +20,7 @@ describe('app reducer', () => {
       ]
     };
 
-    const action = updateMarkdown('something else');
+    const action = updateMarkdown('something else', 1234);
 
     const newstate = reducer(state, action);
 
@@ -32,8 +32,6 @@ describe('app reducer', () => {
 
   it('handles the new tab action', () => {
     const state = {
-      currentMarkdownID: 1234,
-  
       markdownList: [  
         { 
           id: 1234,
@@ -48,15 +46,15 @@ describe('app reducer', () => {
       ]
     };
 
-    const action = newMarkdown();
+    const action = newMarkdown('title');
 
     const newstate = reducer(state, action);
     
     expect(newstate).toEqual(
-      { 'currentMarkdownID': expect.anything(), 
+      {  
         'markdownList': [{ 'body': 'Look at that markdown file.', 'id': 1234, 'title': 'whatever' }, 
           { 'body': 'Do not Look at that markdown file.', 'id': 5678, 'title': 'whatever' },
-          { 'id': expect.anything(), title: '', body: '' }] }
+          { 'id': expect.anything(), title: 'title', body: '' }] }
     );
   });
 
