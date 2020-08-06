@@ -3,7 +3,7 @@ import { UPDATE_MARKDOWN, NEW_MARKDOWN } from '../actions/actions';
 
 export const initialState = {
   currentMarkdownID: 1234,
-  
+
   markdownList: [  
     { 
       id: 1234,
