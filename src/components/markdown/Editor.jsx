@@ -9,7 +9,12 @@ const Editor = () => {
   const dispatch = useDispatch();
 
   return (
-    <textarea className={styles.Editor} value={markdown} onChange={({ target }) => dispatch(updateMarkdown(target.value))} />
+    <textarea 
+      className={styles.Editor} 
+      value={markdown} 
+      onChange={({ target }) => 
+        dispatch(updateMarkdown(target.value))} 
+    />
   );
 };
 
