@@ -16,7 +16,7 @@ exports[`MarkdownList component renders MarkdownList 1`] = `
           Object {
             "body": "Look at that markdown file.",
             "id": 5678,
-            "title": "whatever",
+            "title": "new tab",
           },
         ],
       },

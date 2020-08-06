@@ -16,7 +16,7 @@ exports[`Preview component renders Preview 1`] = `
           Object {
             "body": "Look at that markdown file.",
             "id": 5678,
-            "title": "whatever",
+            "title": "new tab",
           },
         ],
       },

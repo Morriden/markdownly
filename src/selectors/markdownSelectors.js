@@ -4,16 +4,10 @@ export const getMarkdownID = state => state.currentMarkdownID;
 
 export const getMarkdown = state => {
   
-  let markdownBody;
-
-  state.markdownList.filter(markdown => {
-    if(markdown.id === getMarkdownID(state)) {
-      return markdownBody = markdown.body;
-    }
-  });
-  return markdownBody;
+  const markdown = state.markdownList.find(markdown => 
+    (markdown.id === getMarkdownID(state)));
+  return markdown?.body;
 };
-
 export const getMarkdownList = state => state.markdownList;
 
 
