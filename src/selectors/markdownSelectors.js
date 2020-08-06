@@ -14,5 +14,7 @@ export const getMarkdown = state => {
   return markdownBody;
 };
 
+export const getMarkdownList = state => state.markdownList;
+
 
 export const getMarkdownPreview = state => marked(getMarkdown(state));
