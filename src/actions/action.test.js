@@ -6,17 +6,20 @@ describe('actions', () => {
 
     expect(action).toEqual({
       type: UPDATE_MARKDOWN,
-      payload: 'tester'
+      payload: {
+        data: 'tester',
+        id: undefined,
+      },
     });
   });
 
   it('will make a new markdown state', () => {
-    const action = newMarkdown();
+    const action = newMarkdown('new title');
     expect(action).toEqual({
       type: NEW_MARKDOWN,
       payload: {
         id: expect.anything(),
-        title: '',
+        title: 'new title',
         body: ''
       }
     });

@@ -6,7 +6,6 @@ exports[`MarkdownList component renders MarkdownList 1`] = `
     Object {
       "dispatch": [Function],
       "state": Object {
-        "currentMarkdownID": 1234,
         "markdownList": Array [
           Object {
             "body": "Look at that markdown file.",
@@ -14,7 +13,7 @@ exports[`MarkdownList component renders MarkdownList 1`] = `
             "title": "whatever",
           },
           Object {
-            "body": "Look at that markdown file.",
+            "body": "Look at this new markdown file.",
             "id": 5678,
             "title": "new tab",
           },
