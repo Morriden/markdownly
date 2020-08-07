@@ -19,7 +19,7 @@ const Controls = () => {
 
   const handleClick = (id) => {
     dispatch(deleteMarkdown(id));
-    history.push(`/${markdownList[0].id}`);
+    history.push(`/markdown/${markdownList[0].id}`);
   };
 
   return (

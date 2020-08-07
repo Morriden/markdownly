@@ -4,8 +4,7 @@ import { updateMarkdown, newMarkdown, deleteMarkdown, filterTitle, filterBody } 
 describe('app reducer', () => {
   it('handles the updatemarkdown action', () => {
     const state = {
-      currentMarkdownID: 1234,
-  
+
       markdownList: [  
         { 
           id: 1234,
@@ -25,8 +24,20 @@ describe('app reducer', () => {
     const newstate = reducer(state, action);
 
     expect(newstate).toEqual(
-      { 'currentMarkdownID': 1234, 
-        'markdownList': [{ 'body': 'something else', 'id': 1234, 'title': 'whatever' }, { 'body': 'Do not Look at that markdown file.', 'id': 5678, 'title': 'whatever' }] }
+      { 
+        markdownList: [
+          { 
+            body: 'something else', 
+            id: 1234, 
+            title: 'whatever' 
+          }, 
+          {
+            body: 'Do not Look at that markdown file.',
+            id: 5678, 
+            title: 'whatever' 
+          }
+        ] 
+      }
     );
   });
 
@@ -52,9 +63,24 @@ describe('app reducer', () => {
     
     expect(newstate).toEqual(
       {  
-        'markdownList': [{ 'body': 'Look at that markdown file.', 'id': 1234, 'title': 'whatever' }, 
-          { 'body': 'Do not Look at that markdown file.', 'id': 5678, 'title': 'whatever' },
-          { 'id': expect.anything(), title: 'title', body: '' }] }
+        markdownList: [
+          { 
+            body: 'Look at that markdown file.', 
+            id: 1234, 
+            title: 'whatever' 
+          }, 
+          { 
+            body: 'Do not Look at that markdown file.', 
+            id: 5678, 
+            title: 'whatever' 
+          },
+          { 
+            id: expect.anything(), 
+            title: 'title', 
+            body: '' 
+          }
+        ] 
+      }
     );
   });
 
@@ -85,7 +111,8 @@ describe('app reducer', () => {
             body: 'Look at that markdown file.',
             id: 1234, 
             title: 'whatever' }, 
-        ] }
+        ] 
+      }
     );
   });
 
@@ -116,17 +143,36 @@ describe('app reducer', () => {
     
     expect(newstate).toEqual(
       {  
-        'markdownList': [
+        markdownList: [  
+          { 
+            id: 1234,
+            title: 'old markDown',
+            body: 'Look at that markdown file.'
+          },
+          { 
+            id: 5678,
+            title: 'whatever',
+            body: 'Do not Look at that markdown file.'
+          },
+          { 
+            id: 1278,
+            title: 'new markDown',
+            body: 'Super original text.'
+          },
+  
+        ],
+        'searchResult': [
           { 
             id: 5678,
             title: 'whatever', 
             body: 'Do not Look at that markdown file.'
           },
-        ] }
+        ] 
+      }
     );
   });
 
-  it('filters an object by title from the array', () => {
+  it('filters an object by body from the array', () => {
     const state = {
       markdownList: [  
         { 
@@ -152,21 +198,43 @@ describe('app reducer', () => {
       ]
     };
 
-    const action = filterBody('this');
+    const action = filterBody('This');
 
     const newstate = reducer(state, action);
     
     expect(newstate).toEqual(
       {  
-        'markdownList': [
+        markdownList: [  
+          { 
+            id: 1234,
+            title: 'old markDown',
+            body: 'Look at that markdown file.'
+          },
+          { 
+            id: 5678,
+            title: 'whatever',
+            body: 'Do not Look at that markdown file.'
+          },
+          { 
+            id: 1278,
+            title: 'new markDown',
+            body: 'Super original text.'
+          },
           { 
             id: 1788,
             title: 'new whatever',
             body: 'This will have some new words to test and a file.'
           },
-        ] }
+        ],
+        'searchResult': [
+          { 
+            id: 1788,
+            title: 'new whatever',
+            body: 'This will have some new words to test and a file.'
+          },
+        ] 
+      }
     );
   });
-
-
+  
 });
