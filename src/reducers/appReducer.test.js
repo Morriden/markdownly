@@ -227,7 +227,7 @@ describe('app reducer', () => {
           },
         ],
         'searchResult': [
-          { 
+          {
             id: 1788,
             title: 'new whatever',
             body: 'This will have some new words to test and a file.'

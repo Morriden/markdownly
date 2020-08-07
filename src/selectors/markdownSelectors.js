@@ -2,9 +2,9 @@ import marked from 'marked';
 
 export const getMarkdownList = state => state.markdownList;
 
-export const getMarkdown = (state, id, title) => {
+export const getMarkdown = (state, id) => {
   const markdown = state.markdownList.find(markdown => 
-    (markdown.id === id) || markdown.title === title) ;
+    (markdown.id === id)) ;
   return markdown?.body;
 };
 
