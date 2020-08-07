@@ -11,7 +11,12 @@ exports[`App component renders App 1`] = `
     <Route
       component={[Function]}
       exact={true}
-      path="/:id"
+      path="/markdown"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/markdown/:id"
     />
   </Switch>
 </BrowserRouter>
