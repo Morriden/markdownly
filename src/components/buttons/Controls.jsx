@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch } from '../../hooks/appContext';
-import { newMarkdown } from '../../actions/actions';
+import { useDispatch, useSelector } from '../../hooks/appContext';
+import { newMarkdown, deleteMarkdown } from '../../actions/actions';
+import { useParams, useHistory } from 'react-router-dom';
+import { getMarkdownList } from '../../selectors/markdownSelectors';
 
 const Controls = () => {
   const [title, setTitle] = useState('');
+  const { id } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
+  const markdownList = useSelector(getMarkdownList); 
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -12,24 +17,24 @@ const Controls = () => {
     setTitle('');
   };
 
+  const handleClick = (id) => {
+    dispatch(deleteMarkdown(id));
+    history.push(`/${markdownList[0].id}`);
+  };
+
   return (
     <section>
-    <form onSubmit={handleSubmit}>
-      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
+      <form onSubmit={handleSubmit}>
+        <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
+        <label>
+          <button >New Markdown</button>
+        </label>
+      </form>
       <label>
-        <button >New Markdown</button>
+        <button onClick={() => handleClick(+id)}>Delete Markdown</button>
       </label>
-    </form>
-    <label>
-    <button onClick={}>Delete Markdown</button>
-  </label>
-  </section>
+    </section>
   );
 };
-
-
-
-
-
 
 export default Controls;

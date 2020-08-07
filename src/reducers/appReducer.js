@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, NEW_MARKDOWN } from '../actions/actions';
+import { UPDATE_MARKDOWN, NEW_MARKDOWN, DELETE_MARKDOWN } from '../actions/actions';
 
 
 export const initialState = {
@@ -31,6 +31,12 @@ export default function reducer(state, action) {
       return {  
         ...state,
         markdownList: [...state.markdownList, action.payload]  
+      };
+    case DELETE_MARKDOWN:
+      return {
+        markdownList: state.markdownList.filter(markdown => 
+          markdown.id !== action.payload || markdown.id === 1234
+        )
       };
     default:
       return state;
