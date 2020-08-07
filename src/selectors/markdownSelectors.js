@@ -2,6 +2,8 @@ import marked from 'marked';
 
 export const getMarkdownList = state => state.markdownList;
 
+export const getSearchResults = state => state.searchResult;
+
 export const getMarkdown = (state, id) => {
   const markdown = state.markdownList.find(markdown => 
     (markdown.id === id)) ;

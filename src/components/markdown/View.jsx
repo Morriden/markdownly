@@ -4,6 +4,7 @@ import Preview from './Preview';
 import styles from './View.css';
 import MarkdownList from '../markdownList/MarkdownList';
 import Controls from '../buttons/Controls';
+import Search from '../search/Search';
 
 const View = () => {
 
@@ -11,6 +12,7 @@ const View = () => {
     <>
       <Controls />
       <MarkdownList />
+      <Search />
       <div className={styles.View}>
         <Editor />
         <Preview />
