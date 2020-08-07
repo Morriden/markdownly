@@ -13,6 +13,11 @@ const Landing = () => {
         <Link to='/markdown'>
           Use Markdown
         </Link>
+        <br/>
+        <br/>
+        <Link to='/about'>
+          About
+        </Link>
       </h2>
     </div>
   );
