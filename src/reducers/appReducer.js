@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, NEW_MARKDOWN, DELETE_MARKDOWN } from '../actions/actions';
+import { UPDATE_MARKDOWN, NEW_MARKDOWN, DELETE_MARKDOWN, FILTER_TITLE, filterTitle, FILTER_BODY } from '../actions/actions';
 
 
 export const initialState = {
@@ -38,6 +38,20 @@ export default function reducer(state, action) {
           markdown.id !== action.payload || markdown.id === 1234
         )
       };
+    case FILTER_TITLE: 
+      return {
+        markdownList: state.markdownList
+          .filter(markdown => markdown.title.toLowerCase()
+            .includes(action.payload)).map(filteredTitle => filteredTitle)
+      };
+
+    case FILTER_BODY: 
+      return {
+        markdownList: state.markdownList
+          .filter(markdown => markdown.body.toLowerCase()
+            .includes(action.payload)).map(filteredBody => filteredBody)
+      };
+      
     default:
       return state;
   }

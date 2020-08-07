@@ -22,3 +22,15 @@ export const deleteMarkdown = id => ({
   type: DELETE_MARKDOWN,
   payload: id
 });
+
+export const FILTER_TITLE = 'FILTER_TITLE';
+export const filterTitle = (title) => ({
+  type: FILTER_TITLE,
+  payload: title.toLowerCase()
+});
+
+export const FILTER_BODY = 'FILTER_BODY';
+export const filterBody = (body) => ({
+  type: FILTER_BODY,
+  payload: body.toLowerCase()
+});

@@ -16,6 +16,13 @@ exports[`Landing component renders Landing 1`] = `
     >
       Use Markdown
     </Link>
+    <br />
+    <br />
+    <Link
+      to="/about"
+    >
+      About
+    </Link>
   </h2>
 </div>
 `;
