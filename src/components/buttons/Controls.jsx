@@ -27,7 +27,7 @@ const Controls = () => {
       <form onSubmit={handleSubmit}>
         <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
         <label>
-          <button >New Markdown</button>
+          <button>New Markdown</button>
         </label>
       </form>
       <label>

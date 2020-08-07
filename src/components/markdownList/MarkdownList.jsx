@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const MarkdownList = () => {
   const markdownList = useSelector(getMarkdownList);
   const markdownListElements = markdownList.map((markdown) => (
-    <Link to={`/${markdown.id}`} key={markdown.id} >
+    <Link to={`/markdown/${markdown.id}`} key={markdown.id} >
       <li key={markdown.id}>
         {markdown.title}
       </li>
