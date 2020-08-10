@@ -23,14 +23,14 @@ export const deleteMarkdown = id => ({
   payload: id
 });
 
-export const FILTER_TITLE = 'FILTER_TITLE';
-export const filterTitle = (title) => ({
-  type: FILTER_TITLE,
-  payload: title
+export const UPDATE_QUERY = 'UPDATE_QUERY';
+export const updateQuery = query => ({
+  type: UPDATE_QUERY,
+  payload: query
 });
 
-export const FILTER_BODY = 'FILTER_BODY';
-export const filterBody = (body) => ({
-  type: FILTER_BODY,
-  payload: body
+export const UPDATE_SEARCH_TYPE = 'UPDATE_SEARCH_TYPE';
+export const updateSearchType = type => ({
+  type: UPDATE_SEARCH_TYPE,
+  payload: type
 });

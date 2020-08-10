@@ -25,13 +25,13 @@ const Controls = () => {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} />
+        <input type='text' placeholder='Title' value={title} onChange={({ target }) => setTitle(target.value)} />
         <label>
           <button>New Markdown</button>
         </label>
       </form>
       <label>
-        <button onClick={() => handleClick(+id)}>Delete Markdown</button>
+        <button onClick={() => handleClick(+id)}>Delete Current Markdown</button>
       </label>
     </section>
   );

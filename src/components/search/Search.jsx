@@ -1,29 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from '../../hooks/appContext';
-import { filterTitle, filterBody } from '../../actions/actions';
+import React from 'react';
+import { useDispatch } from '../../hooks/appContext';
+import { updateSearchType, updateQuery } from '../../actions/actions';
 
 const Search = () => {
-  const [type, setType] = useState('Title');
-  const [query, setQuery] = useState('');
+  const dispatch = useDispatch();
 
-  const handleSearch = (searchType) => {
-    if(searchType === 'Title') {
-      console.log('searching title');
-      useDispatch(filterTitle(query));
-    } else if(searchType === 'Body') {
-      console.log('searching body');
-      useDispatch(filterBody(query));
-    }
-  };
+ 
 
   return (
     <div>
-      <select onChange={({ target }) => setType(target.value)}>
-        <option value='Title'>Title</option>
-        <option value='Body'>Body</option>
+      <select onChange={({ target }) => dispatch(updateSearchType(target.value))}>
+        <option value='title'>Title</option>
+        <option value='body'>Body</option>
       </select>
-      <input onChange={({ target }) => setQuery(target.value)}/>
-      <button onClick={() => handleSearch(type)}>Search</button>
+      <input type='text' placeholder='search' onChange={({ target }) => dispatch(updateQuery(target.value))}/>
     </div>
   );
 };

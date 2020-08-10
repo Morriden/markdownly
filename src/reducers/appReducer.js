@@ -1,10 +1,8 @@
-import { UPDATE_MARKDOWN, NEW_MARKDOWN, DELETE_MARKDOWN, FILTER_TITLE,  FILTER_BODY } from '../actions/actions';
-
+import { UPDATE_MARKDOWN, NEW_MARKDOWN, DELETE_MARKDOWN, UPDATE_QUERY, UPDATE_SEARCH_TYPE } from '../actions/actions';
 
 export const initialState = {
-
+  searchType: 'title',
   markdownList: [ 
-     
     { 
       id: 1234,
       title: 'whatever', 
@@ -40,40 +38,14 @@ export default function reducer(state, action) {
           markdown.id !== action.payload || markdown.id === 1234
         )
       };
-    case FILTER_TITLE: 
+    case UPDATE_QUERY: 
       return {
-        ...state,
-        searchResult: 
-        // state.markdownList.map(markdown => {
-        //   if(markdown.title.toLowerCase() === (action.payload.includes())) {
-        //     return
-            state.markdownList
-              .filter(markdown => markdown.title.toLowerCase()
-                .includes(action.payload.toLowerCase())).map(filteredBody => filteredBody)
+        ...state, query: action.payload
       };
-
-        
-      
-      
-      // .include}s(action.payload.toLowerCase())) 
-      // .map(filteredTitle => filteredTitle)
-      
-
-      
-      /*
-      these may need IDs to work properly with actions and selectors? I'm not sure, it's
-      late and I'm tired. I'm thinking use the getMarkdown selector since we already wrote
-      it and just need to update with objects current ID... 
-      */
-    
-    case FILTER_BODY: 
+    case UPDATE_SEARCH_TYPE: 
       return {
-        ...state,
-        searchResult: state.markdownList
-          .filter(markdown => markdown.body.toLowerCase()
-            .includes(action.payload.toLowerCase())).map(filteredBody => filteredBody)
+        ...state, searchType: action.payload
       };
-      
     default:
       return state;
   }
