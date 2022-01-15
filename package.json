@@ -26,7 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "github-markdown-css": "^4.0.0",
-    "marked": "^1.1.1",
+    "marked": "^4.0.10",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
